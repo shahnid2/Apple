@@ -1,0 +1,65 @@
+/* Input: strs = ["eat","tea","tan","ate","nat","bat"]
+ Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+ 
+Example 2:
+Input: strs = [""]
+Output: [[""]]
+
+Example 3:
+Input: strs = ["a"]
+Output: [["a"]]
+
+*/
+import java.util.*;
+
+class Solution {
+
+  public static List<List<String>> anagrams (String[] strs){
+  
+    if(strs.length == 0 || strs == null) 
+      return new ArrayList<List<String>>();
+  
+  
+  Map<String, List<String>> map = new HashMap<>();
+   for (String str : strs){
+   
+     //sort
+     //actual word
+     
+     char[] ch = str.toCharArray(); // eat 
+     Arrays.sort(ch); // aet
+     
+     String sortedString = String.valueOf(ch); //aet
+     
+     if(!map.containsKey(sortedString)){ //aet 
+       map.put(sortedString, new ArrayList<String>());
+       map.get(sortedString).add(str); //aet -> eat
+     }
+     else {
+        map.get(sortedString).add(str);     
+     
+     }
+   }
+     
+     return new ArrayList<List<String>> (map.values());
+   }
+  
+  public static void main(String[] args){
+    String[] inputs = {"eat","tea","tan","ate","nat","bat"};
+    
+    List<List<String>> output = anagrams(inputs);
+    
+    for(List<String> li: output) {
+      System.out.println("[");
+      
+      for(String s: li) {
+        System.out.print(" "+s);
+      }
+      System.out.println("]");
+    }
+  }
+}
+
+
+//Test case "", "a", "aa" , "ab" "ba"
+
