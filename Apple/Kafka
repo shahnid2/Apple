@@ -1,0 +1,30 @@
+    While Kafka allows only one consumer per topic partition. 
+    But, there is no explicit limit on the number of consumer groups that can be instantiated for a particular topic 
+
+ {"Hi Nidhi"}>>>>>>>[TOPIC 1] >>>>>>>>>>>>>>>>>>>>>>>>> [NODE A] 
+                              >>>>>>>>>>>>>>>>>>>>>>>>> [NODE B]
+                              
+  Consumer Group:  CG1
+      members:
+        NODE A
+      offset: 001
+  Consumer Group:  CG2
+      members:
+        NODE B
+      offset: 001
+      
+      
+
+
+
+**/ How would you initialize this to bean - ANSWER - @BEAN
+ interface Person{
+   public void doSomething();
+ }
+
+
+ class User implements Person{
+   public void doSomething(){
+  
+   }
+}
