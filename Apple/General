@@ -1,6 +1,17 @@
 1. What are Daemon threads
 2. synchronised & static synchronised
-3. Find an element in the list
+3. Find an element in the list - The contains method
+                                 The indexOf method
+                                 Third party libraries - Google Guava/ 
+                                 Basic looping
+                                 The Stream API - nvoke stream() on the list
+            call the filter() method with a proper Predicate
+            call the findAny() construct, which returns the first element that matches the filter predicate wrapped in an Optional if such an element exists
+            Customer james = customers.stream()
+  .filter(customer -> "James".equals(customer.getName()))
+  .findAny()
+  .orElse(null);
+  
 4. Difference between map & list
 5. Ways to initialise beans
 6. 
